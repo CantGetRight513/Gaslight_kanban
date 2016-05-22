@@ -20,6 +20,25 @@ const common = {
 	output: {
 		path: PATHS.build,
 		filename: 'bundle.js'
+	},
+	module:{
+		loader: [
+			{
+				// Test expects a RegExp!  Note the slashes!
+				test: /\.css$/,
+				loader: ['style', 'css'],
+				// Include accepts either a path or an array of paths.
+				include: PATHS.app
+				/*
+				If include isn't set, Webpack will traverse 
+				all files within the base directory. This 
+				can hurt performance! It is a good idea to 
+				set up include always. There's also exclude 
+				option that may come in handy. Prefer include, 
+				however.
+				*/
+			}
+		]
 	}
 };
 
