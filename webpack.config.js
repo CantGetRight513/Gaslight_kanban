@@ -3,6 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge'); // For splitting up Webpack Configuration
+const npmInstallPlugin = require('npm-install-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event; // currently running process?
 
@@ -46,6 +47,7 @@ const common = {
 // Webpack is called outside of npm.
 if(TARGET === 'start' || !TARGET) {
 	module.exports = merge(common, {
+		devtool: 'eval-source-map',
 		watchOptions: {
 			poll: true
 		},
@@ -65,7 +67,10 @@ if(TARGET === 'start' || !TARGET) {
 			// Parse host and port from env so this is easy to customize.		
 		},
 		plugins: [
-			new webpack.HotModuleReplacementPlugin()
+			new webpack.HotModuleReplacementPlugin(),
+			new npmInstallPlugin({
+				save: true //--save
+			})
 		]
 	});
 }  // If just starting dev server merge common (with an empty object)
