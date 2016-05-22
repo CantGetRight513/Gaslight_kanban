@@ -22,11 +22,11 @@ const common = {
 		filename: 'bundle.js'
 	},
 	module:{
-		loader: [
+		loaders: [
 			{
 				// Test expects a RegExp!  Note the slashes!
 				test: /\.css$/,
-				loader: ['style', 'css'],
+				loaders: ['style', 'css'],
 				// Include accepts either a path or an array of paths.
 				include: PATHS.app
 				/*
