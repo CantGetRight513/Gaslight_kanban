@@ -27,6 +27,9 @@ const common = {
 // Webpack is called outside of npm.
 if(TARGET === 'start' || !TARGET) {
 	module.exports = merge(common, {
+		watchOptions: {
+			poll: true
+		},
 		devServer: {
 			contentBase: PATHS.build,
 			historyApiFallback:true,
