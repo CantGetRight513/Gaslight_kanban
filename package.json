@@ -4,7 +4,8 @@
   "description": "SurviveJS Webpack_React Tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "webpack"
   },
   "author": "Jordan Stroud",
   "license": "ISC",
