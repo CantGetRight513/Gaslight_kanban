@@ -12,7 +12,7 @@ const PATHS = { // File Paths
 	build: path.join(__dirname, 'build')
 };
 
-process.env.BABEL_ENV = TARGET;
+process.env.BABEL_ENV = TARGET;  // Connects Webpack to Babel
 
 const common = {
 	// Entry accepts a path or an object of entries.  We'll be using the
