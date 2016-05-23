@@ -29,11 +29,30 @@ export default class App extends React.Component {
     return (
      <div>     
        <button onClick={this.addNote}>+</button>
-       <Notes notes={notes} />
+       <Notes notes={notes} onEdit={this.editNote} />
+
      </div>
     );
   }
   
+  
+  editNote = (id, task) => {
+    // Don't modify if trying to set an empty value
+    if(!task.trim()) {
+      return;
+    }
+
+    const notes = this.state.notes.map(note => {
+      if(note.id === id && task) {
+        note.task = task;
+      }
+
+      return note;
+    });
+
+    this.setState({notes});
+  };
+}
   // We are using an experimental feature known as property
   // initializer here. It allows us to bind the method `this`
   // to point at our *App* instance.
@@ -58,4 +77,3 @@ export default class App extends React.Component {
         }])
     });
   };    
-}

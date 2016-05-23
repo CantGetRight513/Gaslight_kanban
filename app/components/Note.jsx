@@ -41,7 +41,7 @@ export default class Note extends React.Component {
           autoFocus={true}
           defaultValue={this.props.task}
           onBlur={this.finishEdit}
-          onKeyPress={this.checkEnter} />
+          onKeyPress={this.checkEnter} />;
    };
    renderNote = () => {
     // If the user clicks a normal note, trigger editing logic.
