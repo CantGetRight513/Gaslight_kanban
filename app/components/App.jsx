@@ -52,7 +52,7 @@ export default class App extends React.Component {
 
     this.setState({notes});
   };
-}
+
   // We are using an experimental feature known as property
   // initializer here. It allows us to bind the method `this`
   // to point at our *App* instance.
@@ -77,3 +77,4 @@ export default class App extends React.Component {
         }])
     });
   };    
+ }
