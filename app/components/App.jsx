@@ -1,7 +1,7 @@
 import React from 'react';
 import Notes from './Notes.jsx';
 import NoteActions from '../actions/NoteActions';
-import NoteAtore from '../stores/NoteStore';
+import NoteStore from '../stores/NoteStore';
 
 export default class App extends React.Component {
     
@@ -53,7 +53,7 @@ export default class App extends React.Component {
   };
 
   addNote() {
-	  NoteActions.create({task: 'New tast'});
+	  NoteActions.create({task: 'New task'});
   }
       
  }
